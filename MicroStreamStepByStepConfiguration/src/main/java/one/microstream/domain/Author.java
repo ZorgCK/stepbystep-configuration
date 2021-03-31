@@ -6,6 +6,14 @@ public class Author
 	private String	firsrname;
 	private String	lastname;
 	
+	public Author(String mail, String firsrname, String lastname)
+	{
+		super();
+		this.mail = mail;
+		this.firsrname = firsrname;
+		this.lastname = lastname;
+	}
+	
 	public String getMail()
 	{
 		return mail;
