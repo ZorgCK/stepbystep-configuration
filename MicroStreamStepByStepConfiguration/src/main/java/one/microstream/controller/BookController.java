@@ -4,10 +4,8 @@ import java.util.List;
 
 import io.micronaut.core.util.CollectionUtils;
 import io.micronaut.http.HttpResponse;
-import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Produces;
 import one.microstream.DB;
 import one.microstream.domain.Author;
 import one.microstream.domain.Book;
@@ -17,7 +15,6 @@ import one.microstream.domain.Book;
 public class BookController
 {
 	@Get("/create")
-	@Produces(MediaType.TEXT_PLAIN)
 	public HttpResponse<?> createBooks()
 	{
 		Author author1 = new Author("Charlotte", "Link", "c.link@example.com");
