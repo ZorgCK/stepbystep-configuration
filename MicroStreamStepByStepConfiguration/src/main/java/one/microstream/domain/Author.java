@@ -3,14 +3,14 @@ package one.microstream.domain;
 public class Author
 {
 	private String	mail;
-	private String	firsrname;
+	private String	firstname;
 	private String	lastname;
 	
-	public Author(String mail, String firsrname, String lastname)
+	public Author(String mail, String firstname, String lastname)
 	{
 		super();
 		this.mail = mail;
-		this.firsrname = firsrname;
+		this.firstname = firstname;
 		this.lastname = lastname;
 	}
 	
@@ -24,14 +24,14 @@ public class Author
 		this.mail = mail;
 	}
 	
-	public String getFirsrname()
+	public String getFirstname()
 	{
-		return firsrname;
+		return firstname;
 	}
 	
-	public void setFirsrname(String firsrname)
+	public void setFirstname(String firstname)
 	{
-		this.firsrname = firsrname;
+		this.firstname = firstname;
 	}
 	
 	public String getLastname()
