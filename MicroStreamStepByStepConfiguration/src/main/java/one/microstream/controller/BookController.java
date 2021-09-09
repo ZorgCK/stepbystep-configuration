@@ -15,7 +15,7 @@ import one.microstream.domain.Book;
 public class BookController
 {
 	@Get("/create")
-	public HttpResponse<?> createBooks()
+	public HttpResponse<String> createBooks()
 	{
 		Author author1 = new Author("Charlotte", "Link", "c.link@example.com");
 		Author author2 = new Author("Dan", "Brown", "d.brown@example.com");
