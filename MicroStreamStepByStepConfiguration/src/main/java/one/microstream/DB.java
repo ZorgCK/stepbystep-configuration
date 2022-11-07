@@ -10,7 +10,6 @@ public class DB
 	
 	static
 	{
-		
 		storageManager = EmbeddedStorageConfiguration.Builder()
 			.setStorageDirectory("data")
 			.createEmbeddedStorageFoundation()
