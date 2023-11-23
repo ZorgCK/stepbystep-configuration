@@ -8,18 +8,18 @@
   <packaging>${packaging}</packaging>
 
   <parent>
-    <groupId>io.micronaut</groupId>
-    <artifactId>micronaut-parent</artifactId>
-    <version>2.4.1</version>
+      <groupId>io.micronaut.platform</groupId>
+      <artifactId>micronaut-parent</artifactId>
+      <version>4.2.0</version>
   </parent>
 
   <properties>
-    <packaging>jar</packaging>
-    <jdk.version>11</jdk.version>
-    <release.version>11</release.version>
-    <micronaut.version>2.4.1</micronaut.version>
-    <exec.mainClass>one.microstream.Application</exec.mainClass>
-    <micronaut.runtime>netty</micronaut.runtime>
+      <packaging>jar</packaging>
+      <jdk.version>17</jdk.version>
+      <release.version>17</release.version>
+      <micronaut.version>4.2.0</micronaut.version>
+      <exec.mainClass>one.microstream.Application</exec.mainClass>
+      <micronaut.runtime>netty</micronaut.runtime>
   </properties>
 
   <repositories>
@@ -31,12 +31,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-inject</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.micronaut</groupId>
+      <groupId>io.micronaut.validation</groupId>
       <artifactId>micronaut-validation</artifactId>
       <scope>compile</scope>
     </dependency>
@@ -72,12 +67,7 @@
     </dependency>
     <dependency>
       <groupId>io.micronaut</groupId>
-      <artifactId>micronaut-runtime</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
+      <artifactId>micronaut-jackson-databind</artifactId>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -94,8 +84,23 @@
         <configuration>
           <!-- Uncomment to enable incremental compilation -->
           <!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
-
           <annotationProcessorPaths combine.children="append">
+              <path>
+                  <groupId>io.micronaut</groupId>
+                  <artifactId>micronaut-http-validation</artifactId>
+                  <version>${micronaut.core.version}</version>
+              </path>
+              <path>
+                  <groupId>io.micronaut.validation</groupId>
+                  <artifactId>micronaut-validation-processor</artifactId>
+                  <version>${micronaut.validation.version}</version>
+                  <exclusions>
+                      <exclusion>
+                          <groupId>io.micronaut</groupId>
+                          <artifactId>micronaut-inject</artifactId>
+                      </exclusion>
+                  </exclusions>
+              </path>
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=one.microstream</arg>
