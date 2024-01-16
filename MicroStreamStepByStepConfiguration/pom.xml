@@ -86,14 +86,14 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>one.microstream</groupId>
-			<artifactId>microstream-storage-embedded</artifactId>
-			<version>07.01.00-MS-GA</version>
+			<groupId>org.eclipse.store</groupId>
+			<artifactId>storage-embedded</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>one.microstream</groupId>
-			<artifactId>microstream-storage-embedded-configuration</artifactId>
-			<version>07.01.00-MS-GA</version>
+			<groupId>org.eclipse.store</groupId>
+			<artifactId>storage-embedded-configuration</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
@@ -108,14 +108,16 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<!-- Uncomment to enable incremental compilation -->
-					<!-- <useIncrementalCompilation>false</useIncrementalCompilation> -->
+					<!--
+					<useIncrementalCompilation>false</useIncrementalCompilation> -->
 
 					<annotationProcessorPaths
 						combine.children="append">
 					</annotationProcessorPaths>
 					<compilerArgs>
 						<arg>-Amicronaut.processing.group=one.microstream</arg>
-						<arg>-Amicronaut.processing.module=MicroStreamStepByStepConfiguration</arg>
+						<arg>
+							-Amicronaut.processing.module=MicroStreamStepByStepConfiguration</arg>
 					</compilerArgs>
 				</configuration>
 			</plugin>
